@@ -45,11 +45,45 @@ In this level, we take into consideration customer arrivals, customers being ser
 
 #### Scheduling Events
 
-...
+As an example, suppose three arrival events are initially scheduled.
+# Adding arrivals
+0.500 1 arrives
+0.600 2 arrives
+0.700 3 arrives
+
+The next event to pick is <0.500 1 arrives>. This schedules a serve event.
+# Get next event: 0.500 1 arrives
+0.500 1 served
+0.600 2 arrives
+0.700 3 arrives
+
+The next event to pick is <0.500 1 served>. This schedules a done event.
+# Get next event: 0.500 1 served
+0.600 2 arrives
+0.700 3 arrives
+1.500 1 done
+
+The process is repeated until there are no more events.
+Specifically, pick the earliest occurring one, and if there is a tie, pick the one with the smallest customer ID.
 
 #### Level 5
 
 #### Completion of Discrete Event Stimulation
 
-...
- 
+To complete the discrete event stimulation, we need to consider that an arriving customer can either be served, wait to be served or leaves. Also, compute the statistics at the end of the simulation.
+
+Example of a sample run of a program:
+
+**0.500** (User input)
+**0.600** (User input)
+**0.700** (User input)
+0.500 1 arrives
+0.500 1 served
+0.600 2 arrives
+0.600 2 waits
+0.700 3 arrives
+0.700 3 leaves
+1.500 1 done
+1.500 2 served
+2.500 2 done
+[0.450 2 1]
