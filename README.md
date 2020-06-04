@@ -1,5 +1,5 @@
 # Discrete Event Simulator
-_Last Updated on May 11, 2020_
+_Last Updated on June 4, 2020_
 
 ### Purpose
 
